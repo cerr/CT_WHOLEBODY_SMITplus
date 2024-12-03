@@ -8,8 +8,8 @@
 
 
 
-#Use SMIT
-use_smit=1 #Use SMIT not SMIT+
+#Use SMIT+
+use_smit=0 #Use SMIT not SMIT+
 
 #Data folder and there need a 'data.json' file in the folder 
 data_dir="$1"
@@ -21,13 +21,12 @@ save_folder="$2"
 #Trained weight 
 load_weight_name="$3"
 
-
-a_min=-200
-a_max=300
-space_x=1.0
-space_y=1.0
-space_z=3.0
-out_channels=6
+a_min=-500
+a_max=500
+space_x=1.5
+space_y=1.5
+space_z=2.0
+out_channels=47
 
 python utils/gen_data_json.py $data_dir
 
