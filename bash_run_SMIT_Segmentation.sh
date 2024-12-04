@@ -23,17 +23,22 @@ load_weight_name="$3"
 
 a_min=-500
 a_max=500
+roi_x=128
+roi_y=128
+roi_z=128
 space_x=1.5
 space_y=1.5
 space_z=2.0
 out_channels=47
+model_feature=128
 
 python utils/gen_data_json.py $data_dir
 
 python run_segmentation.py \
-    --roi_x 128 \
-    --roi_y 128 \
-    --roi_z 128 \
+    --model_feature $model_feature \
+    --roi_x $roi_x \
+    --roi_y $roi_y \
+    --roi_z $roi_z \
     --space_x $space_x \
     --space_y $space_y \
     --space_z $space_z \
